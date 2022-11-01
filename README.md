@@ -8,6 +8,13 @@ including servers, data centers and much more, a cloud provider provides these
 services to the company. One of these cloud providers is Amazon, 
 with Amazon Web Services (AWS).
 
+### Benefits
+
+- Ease of Use
+- Flexibility
+- Robustness
+- Cost: Pay As You Go
+
 ### What is AWS?
 
 AWS is an Amazon product, which provides cloud computing tools, 
