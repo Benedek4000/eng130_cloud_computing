@@ -35,3 +35,41 @@ such as platforms and APIs.
 
 ![CapEx vs. OpEx diagram](https://forcam.com/app/uploads/2021/08/capex_opex-comparison-750x0-c-default.jpg)
 
+## Setting up a VM in AWS
+
+### SSH key
+
+- copy ssh key into .ssh folder
+- `chmod 400 [key name].pem`
+
+### Setting up the VM
+
+- launch EC2
+- name instance (eg. eng130-benedek)
+- os: Ubuntu 18.04
+- type: t2.micro
+- key pair: eng130
+- allow for ssh and http
+- create security convention or use an already existing one
+- click 'Launch instance'
+- ssh into VM using the connect tab
+- run a set of provisions, eg.:
+```commandline
+sudo apt update
+sudo apt upgrade -y
+sudo apt install nginx -y
+```
+
+### Set up reverse proxy
+
+- `sudo nano /etc/nginx/sites-available/default`
+- add the following inside location:
+```other
+proxy_pass http://localhost:3000;
+proxy_http_version 1.1;
+proxy_set_header Upgrade $http_upgrade;
+proxy_set_header Connection 'upgrade';
+proxy_set_header Host $host;
+proxy_cache_bypass $http_upgrade;
+```
+- restart nginx: `sudo systemctl restart nginx`
