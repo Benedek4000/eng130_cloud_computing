@@ -58,6 +58,7 @@ such as platforms and APIs.
 sudo apt update
 sudo apt upgrade -y
 sudo apt install nginx -y
+sudo systemctl enable nginx
 ```
 
 ### Set up reverse proxy
@@ -73,3 +74,17 @@ proxy_set_header Host $host;
 proxy_cache_bypass $http_upgrade;
 ```
 - restart nginx: `sudo systemctl restart nginx`
+
+### Setup nodejs app
+
+```commandline
+sudo apt-get install python -y
+sudo apt-get install software-properties-common -y
+curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+sudo apt-get install nodejs -y
+sudo npm install pm2 -g
+# navigate to the app folder
+sudo npm install
+sudo systemctl restart nginx
+npm start
+```
