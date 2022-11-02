@@ -92,3 +92,37 @@ npm start
 ## 2-tier architecture
 
 ![2-tier architecture diagram](https://github.com/Benedek4000/eng130_cloud_computing/blob/main/images/2tier.png)
+
+### MongoDB setup
+
+on AWS, allow access for the app vm by editing the security groups
+
+install mongodb:
+```commandline
+wget -qO - https://www.mongodb.org/static/pgp/server-4.2.asc | sudo apt-key add -
+echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu bionic/mongodb-org/4.2 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-4.2.list
+sudo apt-get update
+sudo apt-get install -y mongodb-org
+echo "mongodb-org hold" | sudo dpkg --set-selections
+echo "mongodb-org-server hold" | sudo dpkg --set-selections
+echo "mongodb-org-shell hold" | sudo dpkg --set-selections
+echo "mongodb-org-mongos hold" | sudo dpkg --set-selections
+echo "mongodb-org-tools hold" | sudo dpkg --set-selections
+```
+
+in `/etc/mongod.conf` edit bind ip to localhost
+
+setup mongodb:
+```commandline
+sudo systemctl enable mongod
+sudo systemctl restart mongod
+```
+
+### App setup
+
+see above, but run
+```commandline
+export DB_HOST=mongodb://[db_ip]:[db_port]/[db_name]
+node seeds/seed.js
+npm start
+```
