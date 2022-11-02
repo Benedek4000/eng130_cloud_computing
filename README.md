@@ -88,3 +88,7 @@ sudo npm install
 sudo systemctl restart nginx
 npm start
 ```
+
+## 2-tier architecture
+
+![2-tier architecture diagram](https://github.com/Benedek4000/eng130_cloud_computing/blob/main/images/2tier.png)
