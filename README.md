@@ -152,3 +152,20 @@ objects and data to less expensive storage.
 - natural disaster hits the primary site
 - a copy of the primary site needs to be opened
 - human disaster hits the primary site
+
+## AWSCLI
+
+to connect to awscli, use the following commands:
+
+```commandline
+sudo apt update
+sudo apt upgrade -y
+sudo apt install python3 -y
+sudo apt install python3-pip -y
+alias python=python3
+sudo pip3 install awscli
+aws configure  # then follow the instructions
+# enter access key and secret access key
+# enter region and output format (eg. eu-west-1 & json)
+aws s3 ls  # to check access & list s3 buckets available
+```
