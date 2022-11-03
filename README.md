@@ -149,9 +149,10 @@ objects and data to less expensive storage.
 
 ### Use cases of disaster recovery
 
-- natural disaster hits the primary site
-- a copy of the primary site needs to be opened
-- human disaster hits the primary site
+- natural disaster hits the primary site, eg. tornado or tsunami
+- a copy of the primary site needs to be opened, eg. the company is scaling up
+- human disaster hits the primary site, eg. cyber attack or negligence
+- hardware failure, eg. physical damage or fire
 
 ## AWSCLI
 
