@@ -138,6 +138,8 @@ Amazon S3 offers features to improve data resilience and provide backup
 in case of a disaster. Amazon S3 is capable of transferring and storing
 objects and data to less expensive storage.
 
+![amazon s3 diagram](https://github.com/Benedek4000/eng130_cloud_computing/blob/main/images/amazons3.png)
+
 ### Benefits
 
 - backups can be made
