@@ -126,3 +126,27 @@ export DB_HOST=mongodb://[db_ip]:[db_port]/[db_name]
 node seeds/seed.js
 npm start
 ```
+
+## Disaster recovery
+
+Disaster recovery (DR) is a set of policies and procedures in place to 
+enable the recovery of a system, in case in goes down or becomes unavailable.
+
+### S3
+
+Amazon S3 offers features to improve data resilience and provide backup 
+in case of a disaster. Amazon S3 is capable of transferring and storing
+objects and data to less expensive storage.
+
+### Benefits
+
+- backups can be made
+- less expensive
+- more resilient data
+- objects can be restored in case of a disaster
+
+### Use cases of disaster recovery
+
+- natural disaster hits the primary site
+- a copy of the primary site needs to be opened
+- human disaster hits the primary site
