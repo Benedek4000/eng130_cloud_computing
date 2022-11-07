@@ -200,3 +200,11 @@ make sure to include `#!/bin/bash` as the first line
 - once the template is created, create a new auto-scaling group based on the 
 template created
 - in a few minutes, the first instances should be created
+
+### Creating an alarm
+
+in AWS:
+- add ASG to a dashboard
+- in the dashboard, create an alarm, by specifying the conditions for the 
+alarm to trigger and by setting up an alarm group, the members of which 
+would receive the alarm when triggered
