@@ -170,3 +170,26 @@ aws configure  # then follow the instructions
 # enter region and output format (eg. eu-west-1 & json)
 aws s3 ls  # to check access & list s3 buckets available
 ```
+
+## Auto-Scaling Groups (ASGs)
+
+ASGs are groups of instances, which automatically scale with the needs of the
+business, by creating and destroying instances to provide resources for the
+needs of the business.
+
+### Benefits
+
+- cost
+- resilience
+- reliability
+
+### Creating an ASG
+
+in AWS:
+- create a launch template, by defining the basic properties of th instances 
+created by the auto-scaling group
+- make sure to create a security group for the template, as the instances
+can be identified by this security group, in case they need to connect to
+another instance (like a database host)
+- once the template is created, create a new auto-scaling group based on the 
+template created

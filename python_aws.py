@@ -38,7 +38,7 @@ class Bucket:
         response = self.s3_client.download_file(Bucket=self.options['b'], Key=self.options['k'], Filename=self.options['f'])
 
     def delete(self):
-        response = self.s3_client.delete_object(Bucket=self.options['b'], Key=self.options(['k']))
+        response = self.s3_client.delete_object(Bucket=self.options['b'], Key=self.options['k'])
 
 
 try:
