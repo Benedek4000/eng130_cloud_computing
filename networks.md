@@ -7,6 +7,8 @@
 A virtual private cloud is an environment within a public cloud. It is isolated
 from the public cloud to provide a virtual private environment.
 
+![vpc diagram](https://github.com/Benedek4000/eng130_cloud_computing/blob/main/images/vpc.png)
+
 ### IG
 
 An internet gateway is a VPC component that allows communication between the 
