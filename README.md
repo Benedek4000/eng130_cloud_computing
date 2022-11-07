@@ -210,3 +210,26 @@ in AWS:
 - in the dashboard, create an alarm, by specifying the conditions for the 
 alarm to trigger and by setting up an alarm group, the members of which 
 would receive the alarm when triggered
+
+## VPCs & Subnets & Internet Gateways & Route Tables
+
+![vpc diagram](https://github.com/Benedek4000/eng130_cloud_computing/blob/main/images/vpc.png)
+
+steps to set up node app:
+- create vpc
+- create public subnet (assign CIDR)
+- create private subnet (assign CIDR)
+- create internet gateway
+- create public route table, associate it with public subnet and 
+add internet gateway to it
+- create private route table and associate it with private subnet
+- create instance for app: allow ssh access from my ip, allow http access
+from everywhere
+- create instance for db: allow custom tcp access from the CIDR block
+defined for the public subnet
+- run both machines using the AMIs
+- in app VM:
+  - add environment variable DB_HOST: 
+  `mongodb://[private ip of db]:27017/posts`
+  - seed db: `node seeds/seed.js`
+  - run app: `npm start`
