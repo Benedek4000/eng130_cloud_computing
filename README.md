@@ -177,6 +177,8 @@ ASGs are groups of instances, which automatically scale with the needs of the
 business, by creating and destroying instances to provide resources for the
 needs of the business.
 
+![asg diagram](https://github.com/Benedek4000/eng130_cloud_computing/blob/main/images/asg.png)
+
 ### Benefits
 
 - cost
@@ -191,5 +193,8 @@ created by the auto-scaling group
 - make sure to create a security group for the template, as the instances
 can be identified by this security group, in case they need to connect to
 another instance (like a database host)
+- to provide a provision script, edit the user data in advanced details, 
+make sure to include `#!/bin/bash` as the first line
 - once the template is created, create a new auto-scaling group based on the 
 template created
+- in a few minutes, the first instances should be created
