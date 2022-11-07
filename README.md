@@ -195,6 +195,8 @@ can be identified by this security group, in case they need to connect to
 another instance (like a database host)
 - load-balancing can be used to set up exactly when the ASG should create
 or destroy instances
+- make sure to add multiple availability zones, if the business requires it, 
+to make the ASG more resilient
 - to provide a provision script, edit the user data in advanced details, 
 make sure to include `#!/bin/bash` as the first line
 - once the template is created, create a new auto-scaling group based on the 
